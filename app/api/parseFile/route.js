@@ -31,7 +31,7 @@ export async function POST(request) {
         {
           role: 'user',
           parts: [
-            { text: "Take the uploaded resume and extract the text. Use it to create a classic 4chan-style greentext story from a first-person perspective. Keep it dark, ironic, and sadistic, with black humor. Anonymize personal details as [REDACTED]. Format each line with '>' and keep them under 10-12 words. The output should be a JSON array of up to 10 greentext lines, making it viral and relatable to the user" },
+            { text: "Take the uploaded resume and extract the text. Use it to create a classic 4chan-style greentext story from a first-person perspective. Keep it dark, ironic, and sadistic, with black humor. Anonymize personal details as [REDACTED]. Format each line with '>' and keep them under 10-12 words. The output should be a JSON array of up to 10 greentext lines, making it viral and relatable to the user.it should strictly be sent in this platform asked for" },
             {
               inlineData: {
                 mimeType: mimeType,
