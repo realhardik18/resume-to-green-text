@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const App = () => {
   const [file, setFile] = useState(null);
@@ -67,17 +68,17 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-900 text-gray-300 text-sm">
       {/* Navbar */}
       <motion.nav 
-        className="bg-green-600 text-white shadow-md"
+        className="bg-green-800 text-white shadow-md"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 100 }}
       >
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <motion.h1 
-            className="text-2xl font-bold"
+            className="text-xl font-bold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -85,12 +86,14 @@ const App = () => {
             Resume to Greentext Generator
           </motion.h1>
           <motion.div
-            className="text-sm font-light"
+            className="text-xs font-light"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            Made by Hardik
+            <Link href='https://x.com/realhardik18'>
+            Made by Realhardik18
+            </Link>
           </motion.div>
         </div>
       </motion.nav>
@@ -100,15 +103,15 @@ const App = () => {
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left side - Upload Section */}
           <motion.div 
-            className="md:w-1/2 bg-white rounded-lg shadow-md p-6"
+            className="md:w-1/2 bg-gray-800 rounded-lg shadow-md p-6"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="mb-6 text-xl font-bold text-gray-800 border-b pb-2">Upload Your Resume</h2>
+            <h2 className="mb-6 text-lg font-bold text-gray-200 border-b border-gray-700 pb-2">Upload Your Resume</h2>
             
             <div className="mb-6">
-              <label className="block mb-2 text-sm font-medium text-gray-700">
+              <label className="block mb-2 text-xs font-medium text-gray-300">
                 Select File
               </label>
               <motion.div
@@ -118,7 +121,7 @@ const App = () => {
                 <input
                   type="file"
                   onChange={handleFileChange}
-                  className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100 cursor-pointer"
+                  className="block w-full text-xs text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-green-900 file:text-green-300 hover:file:bg-green-800 cursor-pointer"
                 />
               </motion.div>
             </div>
@@ -126,13 +129,13 @@ const App = () => {
             <motion.button
               onClick={handleUpload}
               disabled={isUploading || !file}
-              className="w-full px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:bg-green-300 transition-colors duration-200"
+              className="w-full px-4 py-2 text-xs font-medium text-white bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:bg-green-900 disabled:text-gray-500 transition-colors duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               {isUploading ? (
                 <div className="flex items-center justify-center">
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <svg className="animate-spin -ml-1 mr-3 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
@@ -143,7 +146,7 @@ const App = () => {
             
             {error && (
               <motion.div 
-                className="p-3 mt-4 text-sm text-red-700 bg-red-100 rounded-md"
+                className="p-3 mt-4 text-xs text-red-300 bg-red-900 rounded-md"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
@@ -154,33 +157,33 @@ const App = () => {
 
             {file && (
               <motion.div
-                className="mt-4 p-3 bg-gray-50 rounded-md border border-gray-200"
+                className="mt-4 p-3 bg-gray-700 rounded-md border border-gray-600"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <p className="text-sm text-gray-600">Selected file: <span className="font-medium">{file.name}</span></p>
+                <p className="text-xs text-gray-300">Selected file: <span className="font-medium">{file.name}</span></p>
               </motion.div>
             )}
           </motion.div>
           
           {/* Right side - Output */}
           <motion.div 
-            className="md:w-1/2 bg-white rounded-lg shadow-md p-6"
+            className="md:w-1/2 bg-gray-800 rounded-lg shadow-md p-6"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h2 className="mb-6 text-xl font-bold text-gray-800 border-b pb-2">Generated Greentext</h2>
+            <h2 className="mb-6 text-lg font-bold text-gray-200 border-b border-gray-700 pb-2">Generated Greentext</h2>
             
             {result ? (
               <motion.div
-                className="p-4 bg-green-50 rounded-md border border-green-200 h-64 overflow-auto"
+                className="p-4 bg-gray-700 rounded-md border border-green-800 h-64 overflow-auto"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="text-green-700 font-mono whitespace-pre-wrap">
+                <div className="text-green-400 font-mono whitespace-pre-wrap text-xs">
                   {Array.isArray(result) ? (
                     // Handle array of objects
                     result.map((item, index) => (
@@ -213,16 +216,16 @@ const App = () => {
               </motion.div>
             ) : (
               <motion.div 
-                className="flex flex-col items-center justify-center h-64 bg-gray-50 rounded-md border border-dashed border-gray-300"
+                className="flex flex-col items-center justify-center h-64 bg-gray-700 rounded-md border border-dashed border-gray-600"
                 animate={{ 
-                  backgroundColor: ["#f9fafb", "#f0fdf4", "#f9fafb"],
+                  backgroundColor: ["#374151", "#064e3b", "#374151"],
                   transition: { duration: 3, repeat: Infinity }
                 }}
               >
-                <svg className="w-12 h-12 text-gray-400 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-10 h-10 text-gray-500 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
-                <p className="text-gray-500 text-center">Upload a resume to generate greentext</p>
+                <p className="text-gray-400 text-center text-xs">Upload a resume to generate greentext</p>
               </motion.div>
             )}
 
@@ -245,7 +248,7 @@ const App = () => {
                     }
                     navigator.clipboard.writeText(textToCopy);
                   }}
-                  className="px-3 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-md hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-200"
+                  className="px-3 py-1 text-xs font-medium text-green-300 bg-green-900 rounded-md hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-700 transition-colors duration-200"
                 >
                   Copy to clipboard
                 </button>
