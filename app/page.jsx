@@ -328,16 +328,6 @@ const App = () => {
                   <Clipboard size={14} className="mr-1" />
                   {copied ? "Copied!" : "Copy to clipboard"}
                 </motion.button>
-
-                <motion.button
-                  onClick={shareToTwitter}
-                  className="px-3 py-2 text-xs font-medium text-white bg-[#1d9bf0] rounded-md hover:bg-[#1a8cd8] focus:outline-none focus:ring-2 focus:ring-[#1d9bf0] transition-colors duration-200 flex items-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Share2 size={14} className="mr-1" />
-                  Tweet on X
-                </motion.button>
               </motion.div>
             )}
           </motion.div>
