@@ -1,6 +1,6 @@
 {
     "functions": {
-      "api/parseFile/route.js": {
+      "app/api/parseFile/route.js": {
         "maxDuration": 15 
       }
     }
