@@ -31,7 +31,7 @@ export async function POST(request) {
         {
           role: 'user',
           parts: [
-            { text: "The uploaded file is a resume. Extract the text content and use it as inspiration to generate a classic 4chan-style greentext story from a first-person perspective. The story should have a dark, ironic, and sadistic tone, incorporating black humor. Avoid directly referencing personal details to maintain anonymity.replace them with [REDACTED]. Format the response in the traditional greentext style, with each line prefixed by '>'. Additionally, include relevant image references in the format >feeling.png to enhance the narrative. For example, >depression.png, >cope.png, >based.png etc can be inserted at appropriate moments to fit the story's tone but in a new line. The final response should be structured as a JSON array of greentext lines, with image references integrated naturally where appropriate. should not be more than 15 items" },
+            { text: "Take the uploaded resume and extract the text. Use it to create a classic 4chan-style greentext story from a first-person perspective. Keep it dark, ironic, and sadistic, with black humor. Anonymize personal details as [REDACTED]. Format each line with '>' and keep them under 10-12 words. The output should be a JSON array of up to 10 greentext lines, making it viral and relatable to the user" },
             {
               inlineData: {
                 mimeType: mimeType,
